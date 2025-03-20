@@ -12,6 +12,8 @@ mainFrame.Position = UDim2.new(0.5, -200, 0.5, -100)
 mainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 mainFrame.BackgroundTransparency = 0.5
 mainFrame.BorderSizePixel = 0
+mainFrame.Active = true
+mainFrame.Draggable = true
 mainFrame.Parent = screenGui
 
 -- Fancy Border
@@ -47,6 +49,21 @@ nameLabel.TextColor3 = Color3.fromRGB(255, 165, 0)  -- Gold color for the name
 nameLabel.BackgroundTransparency = 1
 nameLabel.TextStrokeTransparency = 0.5
 nameLabel.Parent = mainFrame
+
+-- Close Button
+local closeButton = Instance.new("TextButton")
+closeButton.Size = UDim2.new(0, 50, 0, 50)
+closeButton.Position = UDim2.new(1, -60, 0, 10)
+closeButton.Text = "X"
+closeButton.Font = Enum.Font.GothamBold
+closeButton.TextSize = 24
+closeButton.TextColor3 = Color3.fromRGB(255, 0, 0)
+closeButton.BackgroundTransparency = 0.5
+closeButton.Parent = mainFrame
+
+closeButton.MouseButton1Click:Connect(function()
+    screenGui:Destroy()
+end)
 
 -- Teleport Functionality
 teleportButton.MouseButton1Click:Connect(function()
