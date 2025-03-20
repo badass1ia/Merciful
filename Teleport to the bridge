@@ -1,0 +1,55 @@
+-- Place this script inside a LocalScript in StarterPlayerScripts
+
+-- Create the GUI
+local player = game.Players.LocalPlayer
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = player.PlayerGui
+
+-- Main Frame
+local mainFrame = Instance.new("Frame")
+mainFrame.Size = UDim2.new(0, 400, 0, 200)
+mainFrame.Position = UDim2.new(0.5, -200, 0.5, -100)
+mainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+mainFrame.BackgroundTransparency = 0.5
+mainFrame.BorderSizePixel = 0
+mainFrame.Parent = screenGui
+
+-- Fancy Border
+local border = Instance.new("Frame")
+border.Size = UDim2.new(1, 0, 1, 0)
+border.Position = UDim2.new(0, 0, 0, 0)
+border.BackgroundTransparency = 1
+border.BorderSizePixel = 5
+border.BorderColor3 = Color3.fromRGB(255, 165, 0)  -- Gold border
+border.Parent = mainFrame
+
+-- Teleport Button
+local teleportButton = Instance.new("TextButton")
+teleportButton.Size = UDim2.new(0, 200, 0, 50)
+teleportButton.Position = UDim2.new(0.5, -100, 0.4, 0)
+teleportButton.Text = "Teleport Now"
+teleportButton.Font = Enum.Font.GothamBold
+teleportButton.TextSize = 24
+teleportButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+teleportButton.BackgroundColor3 = Color3.fromRGB(0, 128, 255)
+teleportButton.BorderSizePixel = 2
+teleportButton.BorderColor3 = Color3.fromRGB(255, 165, 0)  -- Gold border
+teleportButton.Parent = mainFrame
+
+-- Name Label
+local nameLabel = Instance.new("TextLabel")
+nameLabel.Size = UDim2.new(0, 400, 0, 50)
+nameLabel.Position = UDim2.new(0.5, -200, 1, -50)
+nameLabel.Text = "badass1ia"
+nameLabel.Font = Enum.Font.GothamBold
+nameLabel.TextSize = 36
+nameLabel.TextColor3 = Color3.fromRGB(255, 165, 0)  -- Gold color for the name
+nameLabel.BackgroundTransparency = 1
+nameLabel.TextStrokeTransparency = 0.5
+nameLabel.Parent = mainFrame
+
+-- Teleport Functionality
+teleportButton.MouseButton1Click:Connect(function()
+    local targetPosition = Vector3.new(-346, -69, -49060)
+    player.Character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
+end)
