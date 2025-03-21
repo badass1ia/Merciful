@@ -94,7 +94,7 @@ closeButton.MouseButton1Click:Connect(function()
 end)
 
 teleportButton.MouseButton1Click:Connect(function()
-    local targetPosition = Vector3.new(-340, -3, -49043)
+    local targetPosition = Vector3.new(-346, -69, -49060)
     player.Character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
 end)
 
