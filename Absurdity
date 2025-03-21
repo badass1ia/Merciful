@@ -1,19 +1,16 @@
-
 local player = game.Players.LocalPlayer
 local screenGui = Instance.new("ScreenGui")
 screenGui.Parent = player.PlayerGui
 
-
 local mainFrame = Instance.new("Frame")
-mainFrame.Size = UDim2.new(0, 400, 0, 200)
-mainFrame.Position = UDim2.new(0.5, -200, 0.5, -100)
+mainFrame.Size = UDim2.new(0, 400, 0, 300)  -- Increased height to accommodate notes
+mainFrame.Position = UDim2.new(0.5, -200, 0.5, -150)
 mainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 mainFrame.BackgroundTransparency = 0.5
 mainFrame.BorderSizePixel = 0
 mainFrame.Active = true
 mainFrame.Draggable = true
 mainFrame.Parent = screenGui
-
 
 local border = Instance.new("Frame")
 border.Size = UDim2.new(1, 0, 1, 0)
@@ -23,11 +20,10 @@ border.BorderSizePixel = 5
 border.BorderColor3 = Color3.fromRGB(255, 165, 0)  -- Gold border
 border.Parent = mainFrame
 
-
 local teleportButton = Instance.new("TextButton")
 teleportButton.Size = UDim2.new(0, 200, 0, 50)
-teleportButton.Position = UDim2.new(0.5, -100, 0.4, 0)
-teleportButton.Text = "Teleport Now"
+teleportButton.Position = UDim2.new(0.5, -100, 0.25, 0)
+teleportButton.Text = "Teleport to Bridge"
 teleportButton.Font = Enum.Font.GothamBold
 teleportButton.TextSize = 24
 teleportButton.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -36,10 +32,9 @@ teleportButton.BorderSizePixel = 2
 teleportButton.BorderColor3 = Color3.fromRGB(255, 165, 0)  -- Gold border
 teleportButton.Parent = mainFrame
 
-
 local nameLabel = Instance.new("TextLabel")
 nameLabel.Size = UDim2.new(0, 400, 0, 50)
-nameLabel.Position = UDim2.new(0.5, -200, 1, -50)
+nameLabel.Position = UDim2.new(0.5, -200, 0.75, -50)
 nameLabel.Text = "badass1ia"
 nameLabel.Font = Enum.Font.GothamBold
 nameLabel.TextSize = 36
@@ -47,7 +42,6 @@ nameLabel.TextColor3 = Color3.fromRGB(255, 165, 0)  -- Gold color for the name
 nameLabel.BackgroundTransparency = 1
 nameLabel.TextStrokeTransparency = 0.5
 nameLabel.Parent = mainFrame
-
 
 local closeButton = Instance.new("TextButton")
 closeButton.Size = UDim2.new(0, 50, 0, 50)
@@ -63,7 +57,30 @@ closeButton.MouseButton1Click:Connect(function()
     screenGui:Destroy()
 end)
 
--- Teleport Functionality
+
+local note1 = Instance.new("TextLabel")
+note1.Size = UDim2.new(0, 400, 0, 30)
+note1.Position = UDim2.new(0.5, -200, 0.1, 0)
+note1.Text = "1. You can lower the crank even if you are dead."
+note1.Font = Enum.Font.Gotham
+note1.TextSize = 18
+note1.TextColor3 = Color3.fromRGB(255, 255, 255)
+note1.BackgroundTransparency = 1
+note1.TextStrokeTransparency = 0.5
+note1.Parent = mainFrame
+
+local note2 = Instance.new("TextLabel")
+note2.Size = UDim2.new(0, 400, 0, 30)
+note2.Position = UDim2.new(0.5, -200, 0.15, 0)
+note2.Text = "2. You need to have a 10-minute playtime in the game to turn the crank."
+note2.Font = Enum.Font.Gotham
+note2.TextSize = 18
+note2.TextColor3 = Color3.fromRGB(255, 255, 255)
+note2.BackgroundTransparency = 1
+note2.TextStrokeTransparency = 0.5
+note2.Parent = mainFrame
+
+
 teleportButton.MouseButton1Click:Connect(function()
     local targetPosition = Vector3.new(-346, -69, -49060)
     player.Character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
