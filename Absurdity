@@ -1,11 +1,9 @@
--- Place this script inside a LocalScript in StarterPlayerScripts
 
--- Create the GUI
 local player = game.Players.LocalPlayer
 local screenGui = Instance.new("ScreenGui")
 screenGui.Parent = player.PlayerGui
 
--- Main Frame
+
 local mainFrame = Instance.new("Frame")
 mainFrame.Size = UDim2.new(0, 400, 0, 200)
 mainFrame.Position = UDim2.new(0.5, -200, 0.5, -100)
@@ -16,7 +14,7 @@ mainFrame.Active = true
 mainFrame.Draggable = true
 mainFrame.Parent = screenGui
 
--- Fancy Border
+
 local border = Instance.new("Frame")
 border.Size = UDim2.new(1, 0, 1, 0)
 border.Position = UDim2.new(0, 0, 0, 0)
@@ -25,7 +23,7 @@ border.BorderSizePixel = 5
 border.BorderColor3 = Color3.fromRGB(255, 165, 0)  -- Gold border
 border.Parent = mainFrame
 
--- Teleport Button
+
 local teleportButton = Instance.new("TextButton")
 teleportButton.Size = UDim2.new(0, 200, 0, 50)
 teleportButton.Position = UDim2.new(0.5, -100, 0.4, 0)
@@ -38,7 +36,7 @@ teleportButton.BorderSizePixel = 2
 teleportButton.BorderColor3 = Color3.fromRGB(255, 165, 0)  -- Gold border
 teleportButton.Parent = mainFrame
 
--- Name Label
+
 local nameLabel = Instance.new("TextLabel")
 nameLabel.Size = UDim2.new(0, 400, 0, 50)
 nameLabel.Position = UDim2.new(0.5, -200, 1, -50)
@@ -50,7 +48,7 @@ nameLabel.BackgroundTransparency = 1
 nameLabel.TextStrokeTransparency = 0.5
 nameLabel.Parent = mainFrame
 
--- Close Button
+
 local closeButton = Instance.new("TextButton")
 closeButton.Size = UDim2.new(0, 50, 0, 50)
 closeButton.Position = UDim2.new(1, -60, 0, 10)
