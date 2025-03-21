@@ -3,10 +3,10 @@ local screenGui = Instance.new("ScreenGui")
 screenGui.Parent = player.PlayerGui
 
 local mainFrame = Instance.new("Frame")
-mainFrame.Size = UDim2.new(0, 400, 0, 300)  -- Increased height to accommodate notes
-mainFrame.Position = UDim2.new(0.5, -200, 0.5, -150)
-mainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-mainFrame.BackgroundTransparency = 0.5
+mainFrame.Size = UDim2.new(0, 500, 0, 400)  -- Increased size
+mainFrame.Position = UDim2.new(0.5, -250, 0.5, -200)
+mainFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+mainFrame.BackgroundTransparency = 0.4
 mainFrame.BorderSizePixel = 0
 mainFrame.Active = true
 mainFrame.Draggable = true
@@ -14,74 +14,91 @@ mainFrame.Parent = screenGui
 
 local border = Instance.new("Frame")
 border.Size = UDim2.new(1, 0, 1, 0)
-border.Position = UDim2.new(0, 0, 0, 0)
 border.BackgroundTransparency = 1
 border.BorderSizePixel = 5
 border.BorderColor3 = Color3.fromRGB(255, 165, 0)  -- Gold border
 border.Parent = mainFrame
 
 local teleportButton = Instance.new("TextButton")
-teleportButton.Size = UDim2.new(0, 200, 0, 50)
-teleportButton.Position = UDim2.new(0.5, -100, 0.25, 0)
+teleportButton.Size = UDim2.new(0, 300, 0, 60)
+teleportButton.Position = UDim2.new(0.5, -150, 0.2, 0)
 teleportButton.Text = "Teleport to Bridge"
 teleportButton.Font = Enum.Font.GothamBold
-teleportButton.TextSize = 24
+teleportButton.TextSize = 28
 teleportButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 teleportButton.BackgroundColor3 = Color3.fromRGB(0, 128, 255)
 teleportButton.BorderSizePixel = 2
-teleportButton.BorderColor3 = Color3.fromRGB(255, 165, 0)  -- Gold border
+teleportButton.BorderColor3 = Color3.fromRGB(255, 165, 0)
 teleportButton.Parent = mainFrame
 
+local noclipButton = Instance.new("TextButton")
+noclipButton.Size = UDim2.new(0, 300, 0, 60)
+noclipButton.Position = UDim2.new(0.5, -150, 0.4, 0)
+noclipButton.Text = "Toggle Noclip"
+noclipButton.Font = Enum.Font.GothamBold
+noclipButton.TextSize = 28
+noclipButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+noclipButton.BackgroundColor3 = Color3.fromRGB(255, 50, 50)
+noclipButton.BorderSizePixel = 2
+noclipButton.BorderColor3 = Color3.fromRGB(255, 165, 0)
+noclipButton.Parent = mainFrame
+
+local noclipStatus = Instance.new("TextLabel")
+noclipStatus.Size = UDim2.new(0, 300, 0, 40)
+noclipStatus.Position = UDim2.new(0.5, -150, 0.55, 0)
+noclipStatus.Text = "Noclip: OFF"
+noclipStatus.Font = Enum.Font.GothamBold
+noclipStatus.TextSize = 24
+noclipStatus.TextColor3 = Color3.fromRGB(255, 0, 0)
+noclipStatus.BackgroundTransparency = 1
+noclipStatus.Parent = mainFrame
+
 local nameLabel = Instance.new("TextLabel")
-nameLabel.Size = UDim2.new(0, 400, 0, 50)
-nameLabel.Position = UDim2.new(0.5, -200, 0.75, -50)
+nameLabel.Size = UDim2.new(0, 500, 0, 50)
+nameLabel.Position = UDim2.new(0.5, -250, 0.85, 0)
 nameLabel.Text = "by badass1ia and Player"
 nameLabel.Font = Enum.Font.GothamBold
 nameLabel.TextSize = 36
-nameLabel.TextColor3 = Color3.fromRGB(255, 165, 0)  -- Gold color for the name
+nameLabel.TextColor3 = Color3.fromRGB(255, 165, 0)
 nameLabel.BackgroundTransparency = 1
 nameLabel.TextStrokeTransparency = 0.5
 nameLabel.Parent = mainFrame
 
 local closeButton = Instance.new("TextButton")
-closeButton.Size = UDim2.new(0, 50, 0, 50)
-closeButton.Position = UDim2.new(1, -60, 0, 10)
+closeButton.Size = UDim2.new(0, 60, 0, 60)
+closeButton.Position = UDim2.new(1, -70, 0, 10)
 closeButton.Text = "X"
 closeButton.Font = Enum.Font.GothamBold
-closeButton.TextSize = 24
+closeButton.TextSize = 30
 closeButton.TextColor3 = Color3.fromRGB(255, 0, 0)
-closeButton.BackgroundTransparency = 0.5
+closeButton.BackgroundTransparency = 0.4
 closeButton.Parent = mainFrame
 
 closeButton.MouseButton1Click:Connect(function()
     screenGui:Destroy()
 end)
 
-
-local note1 = Instance.new("TextLabel")
-note1.Size = UDim2.new(0, 400, 0, 30)
-note1.Position = UDim2.new(0.5, -200, 0.1, 0)
-note1.Text = "1. You can lower the crank even if you are dead."
-note1.Font = Enum.Font.Gotham
-note1.TextSize = 18
-note1.TextColor3 = Color3.fromRGB(255, 255, 255)
-note1.BackgroundTransparency = 1
-note1.TextStrokeTransparency = 0.5
-note1.Parent = mainFrame
-
-local note2 = Instance.new("TextLabel")
-note2.Size = UDim2.new(0, 400, 0, 30)
-note2.Position = UDim2.new(0.5, -200, 0.15, 0)
-note2.Text = "2. You need to have a 10-minute playtime in the game to turn the crank."
-note2.Font = Enum.Font.Gotham
-note2.TextSize = 18
-note2.TextColor3 = Color3.fromRGB(255, 255, 255)
-note2.BackgroundTransparency = 1
-note2.TextStrokeTransparency = 0.5
-note2.Parent = mainFrame
-
-
 teleportButton.MouseButton1Click:Connect(function()
     local targetPosition = Vector3.new(-346, -69, -49060)
     player.Character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
+end)
+
+-- Noclip functionality
+local noclipEnabled = false
+local function toggleNoclip()
+    noclipEnabled = not noclipEnabled
+    noclipStatus.Text = "Noclip: " .. (noclipEnabled and "ON" or "OFF")
+    noclipStatus.TextColor3 = noclipEnabled and Color3.fromRGB(0, 255, 0) or Color3.fromRGB(255, 0, 0)
+end
+
+noclipButton.MouseButton1Click:Connect(toggleNoclip)
+
+game:GetService("RunService").Stepped:Connect(function()
+    if noclipEnabled and player.Character then
+        for _, part in pairs(player.Character:GetDescendants()) do
+            if part:IsA("BasePart") and part.CanCollide then
+                part.CanCollide = false
+            end
+        end
+    end
 end)
